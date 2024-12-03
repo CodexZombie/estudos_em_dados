@@ -53,8 +53,8 @@ def string_para_linhas (string_de_dados):
 def delimita_com_ponto_e_virgula (lista_de_disciplinas):
   saida = "CÓD;DISCIPLINA;CH;SEM;BIM"
 
-  padrao_linha = r"([A-Z]{3,}\d{3})\s+(.*?)\s+(\d{2})\s+(\d)\s+(\d)"
-
+  padrao_linha = r"([A-Z]{3,}\d{3})\s+(.*?)\s+(\d{2})\s+(\d)\s+([0-9]+(?:\s+e\s+[0-9]+)*)"
+  
   for linha in lista_de_disciplinas.split('\n'):
     match = re.match(padrao_linha, linha)
 
@@ -63,7 +63,7 @@ def delimita_com_ponto_e_virgula (lista_de_disciplinas):
       nome = match.group(2)
       carga_horaria = match.group(3)
       semestre = match.group(4)
-      bimestre = match.group(5)
+      bimestre = match.group(5).strip()
 
       linha_formatada = f"{codigo};{nome};{carga_horaria};{semestre};{bimestre}"
       saida += '\n' + linha_formatada
