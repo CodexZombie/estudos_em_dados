@@ -71,10 +71,11 @@ def delimita_com_ponto_e_virgula (lista_de_disciplinas):
   return saida
 
 
-def formata_arquivo():
+def formata_arquivo(): #Chama as funções de modo encadeado
   dados = ler_arquivo()
   linhas = string_para_linhas(dados)
   string_formatada = delimita_com_ponto_e_virgula(linhas)
   salvar_arquivo(string_formatada)
 
-formata_arquivo()
+#chamado de execução da função principal
+formata_arquivo() 
