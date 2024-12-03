@@ -1,3 +1,12 @@
+# Programa que recebe um arquivo de texto contendo uma matriz curricular
+# sem quebra de linhas e sem delimitadores e gera um novo arquivo .csv
+# utilizando ponto-e-vírgula como separador
+
+# Os dados para o arquivo são provenientes da ementa da UNIVESP, e o programa foi necessário
+# para que a matriz curricular pudesse ser manipulada em formato de planilhas do Google
+
+
+
 import re
 
 #PROCESSAMENTO DO ARQUIVO
@@ -20,7 +29,7 @@ def ler_arquivo():
 
 #Grava o arquivo formatado
 def salvar_arquivo(conteudo):
-  nome_arquivo = input("Espeficique um nome para o novo arquivo: ")+".txt"
+  nome_arquivo = input("Espeficique um nome para o novo arquivo: ")+".csv"
   try:
     with open(nome_arquivo, 'w') as arquivo_saida:
       arquivo_saida.write(conteudo)
